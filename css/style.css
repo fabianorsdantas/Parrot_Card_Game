@@ -1,0 +1,23 @@
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEF9BF;
+  }
+
+header{
+    width: 541px;
+    height: 63px;
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 56px;
+    font-weight: bold;
+    color: #75B79E;   
+    text-align: center;
+    align-items: center;
+}
+
