@@ -1,5 +1,6 @@
-
-
+* {
+  box-sizing: border-box;
+}
 
 body {
     display: flex;
@@ -7,6 +8,13 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #EEF9BF;
+  }
+
+body>div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
 header{
@@ -19,5 +27,86 @@ header{
     color: #75B79E;   
     text-align: center;
     align-items: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 117px;
+  height: 146px;
+  border-radius: 5px;
+  margin-left: 17px;
+  margin-right: 17px;
+  margin-bottom: 34px;
+  cursor: pointer;
+  position: relative;
+  transition: all 300ms ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  background-color: #A7E9AF;
+  border-radius: 10px;
+  border: 1px solid #99CEA8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: all .5s;
+  transform-style: preserve-3d;
+}
+
+.back-face {
+  transform: rotateY(180deg);
+}
+
+.card:hover {
+  transform: scale(120%);
+}
+
+.card.active .back-face {
+  transform: rotateY(0deg);
+}
+
+.card.active .front-face {
+  transform: rotateY(-180deg);
+}
+
+.card img {
+  height: 100px;
+  width: 100px;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  min-width: 60px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  right: 20px;
+  top: 45px;
+}
+
+@media screen and (max-width: 700px) {
+  .clock { top: 100px; }
 }
 
