@@ -11,7 +11,7 @@ function embaralharCartas() { return Math.random() - 0.5 }
 
 function iniciarJogo() {
     while (isNaN(numeroDeCartas) || numeroDeCartas < 4 || numeroDeCartas > 14 || numeroDeCartas % 2 !== 0) {
-        numeroDeCartas = Number(prompt('Insira apenas NUMEROS PARES de 4 a 14!'));
+        numeroDeCartas = Number(prompt('Informe apenas NUMEROS PARES de 4 a 14!'));
     }
     escolherGifs();
 }
@@ -40,17 +40,17 @@ function adicionarCartas() {
 }
 
 function ativarCarta(element) {
-    if(element.classList.contains('active')){
+    if(element.classList.contains('selecionada')){
         return;
     } 
 
     if(contadorDeSelecao === 0) {
         primeiraCarta = element;
-        primeiraCarta.classList.add('active');
+        primeiraCarta.classList.add('selecionada');
         contadorDeSelecao++, contadorDeCliques++;
     } else if(contadorDeSelecao === 1) {
         segundaCarta = element;
-        segundaCarta.classList.add('active');
+        segundaCarta.classList.add('selecionada');
         contadorDeSelecao++, contadorDeCliques++;
         setTimeout(compararCartas, 1000);
     } 
@@ -58,21 +58,21 @@ function ativarCarta(element) {
 
 function compararCartas() {
     if(primeiraCarta.querySelector('.back-face img').src !== segundaCarta.querySelector('.back-face img').src) {
-        primeiraCarta.classList.remove('active'), segundaCarta.classList.remove('active');
+        primeiraCarta.classList.remove('selecionada'), segundaCarta.classList.remove('selecionada');
         contadorDeSelecao = 0;
     } 
     else {
         contadorDeSelecao = 0;
     }
         
-    if (document.querySelectorAll('.active').length === numeroDeCartas){
+    if (document.querySelectorAll('.selecionada').length === numeroDeCartas){
        finalizarJogo();
     }
        
 }
 
 function finalizarJogo() {
-    alert(`Você ganhou em ${contadorDeCliques} jogadas.`);
+    alert(`Você ganhou com ${contadorDeCliques} jogadas.`);
     do {
         reiniciar = prompt('Gostaria de reiniciar o jogo? (Digite sim ou não)').toLowerCase();
     } 
@@ -93,6 +93,6 @@ function resetarVariaveis() {
     contadorDeCliques = 0;
     arrayGifs = [...defaultArray];
     cartas.innerHTML = '';
-    numeroDeCartas = Number(prompt('Insira numeros pares de 4 a 14'));
+    numeroDeCartas = Number(prompt('Informe numeros pares de 4 a 14'));
     iniciarJogo();
 }

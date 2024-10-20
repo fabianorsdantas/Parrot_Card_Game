@@ -70,11 +70,11 @@ header{
   transform: scale(120%);
 }
 
-.card.active .back-face {
+.card.selecionada .back-face {
   transform: rotateY(0deg);
 }
 
-.card.active .front-face {
+.card.selecionada .front-face {
   transform: rotateY(-180deg);
 }
 
