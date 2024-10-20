@@ -8,18 +8,12 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #EEF9BF;
-  }
-
-body>div:first-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
   }
 
 header{
     width: 541px;
-    height: 63px;
+    height: 100px;
     margin-top: 40px;
     font-family: 'Roboto', sans-serif;
     font-size: 56px;
@@ -32,9 +26,9 @@ header{
 .cards {
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   flex-wrap: wrap;
-  width: 50%;
+  width: 70%;
 }
 
 .card {
@@ -64,7 +58,7 @@ header{
   justify-content: center;
   position: absolute;
   backface-visibility: hidden;
-  transition: all .5s;
+  transition: all 500ms;
   transform-style: preserve-3d;
 }
 

@@ -3,13 +3,10 @@ let arrayGifs = ['bobrossparrot', 'explodyparrot', 'fiestaparrot', 'metalparrot'
 let defaultArray = [...arrayGifs];
 let contadorDeCliques = 0, contadorDeSelecao = 0;
 let primeiraCarta, segundaCarta, intervalo, reiniciar;
-let tempo = document.querySelector('.clock');
 const cartas = document.querySelector('.cards');
 
 iniciarJogo();
-relogio();
 
-function relogio() { intervalo = setInterval(() => tempo.innerHTML++, 1000) }
 function embaralharCartas() { return Math.random() - 0.5 }
 
 function iniciarJogo() {
@@ -75,7 +72,7 @@ function compararCartas() {
 }
 
 function finalizarJogo() {
-    alert(`Você ganhou em ${contadorDeCliques} jogadas e ${tempo.innerHTML} segundos!`);
+    alert(`Você ganhou em ${contadorDeCliques} jogadas.`);
     do {
         reiniciar = prompt('Gostaria de reiniciar o jogo? (Digite sim ou não)').toLowerCase();
     } 
@@ -95,7 +92,6 @@ function finalizarJogo() {
 function resetarVariaveis() {
     contadorDeCliques = 0;
     arrayGifs = [...defaultArray];
-    tempo.innerHTML = "-1";
     cartas.innerHTML = '';
     numeroDeCartas = Number(prompt('Insira numeros pares de 4 a 14'));
     iniciarJogo();
