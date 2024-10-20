@@ -83,24 +83,4 @@ header{
   width: 100px;
 }
 
-.clock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  min-width: 60px;
-  height: 40px;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-  font-family: 'Roboto', sans-serif;
-  position: fixed;
-  right: 20px;
-  top: 45px;
-}
-
-@media screen and (max-width: 700px) {
-  .clock { top: 100px; }
-}
 
